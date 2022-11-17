@@ -1,0 +1,39 @@
+#Name:Mahim Ali
+#Email:mahim.ali32@myhunter.cuny.edu
+#Date:November 17,2022
+#This program draws flowers using functions
+
+import turtle
+
+def petal(color,angle):
+    t=turtle.Turtle()
+    turtle.colormode(255)
+    t.left(angle)
+    for i in range(0, 255, 10):
+        t.forward(10)
+        t.pendown()
+        t.pensize(i)
+        if color == "red":
+            t.color(i,0,0)
+        elif color == "green":
+            t.color(0,i,0)
+        elif color == "clue":
+            t.color(0,0,i)
+        elif color == "yellow":
+            t.color(i,i,0)
+        elif color == "purple":
+            t.color(i,0,i)
+        elif color == "cyan":
+            t.color(0,i,i)
+    t.penup()
+    t.backward(255)
+def flower(color,petals):
+    angle = 0
+    for i in range(petals):
+        petal(color,angle)
+        angle = 360/petals + angle
+
+
+
+def main():
+    flower("green",9)
